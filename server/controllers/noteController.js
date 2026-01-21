@@ -5,7 +5,8 @@ const Note = require("../models/note");
 
 // To retrieve all notes from the database
 const get_all_notes = (req, res) => {
-  Note.find()
+  const {username} =req.body;
+  Note.find({username})
     .sort({ createdAt: -1 })
     .then((result) => {
       if (result.length > 0) {
@@ -22,7 +23,8 @@ const get_all_notes = (req, res) => {
 
 // To add a new note to the database
 const add_note = (req, res) => {
-  let note = new Note(req.body);
+  const {username} = req.body;
+  let note = new Note({...req.body, username});
   note
     .save()
     .then((result) => {

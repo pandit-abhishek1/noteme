@@ -5,7 +5,11 @@ const router = express.Router();
 // Import Controllers
 const noteController = require("../controllers/noteController");
 const messageController = require("../controllers/messageController");
+const userController = require("../controllers/userController");
 
+// User Routes
+router.post("/register", userController.createUser);
+router.post("/login", userController.loginUser);
 // Feedback Route
 router.post("/submitFeedback", messageController.submit_feedback);
 
