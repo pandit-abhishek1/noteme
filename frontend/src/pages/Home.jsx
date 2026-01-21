@@ -17,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         const fetchNotes = () => {
             axios
-                .get("https://mern-notes-backend-5z2j.onrender.com/allNotes")
+                .get(`${import.meta.env.VITE_API_URL}/allNotes`)
                 .then((res) => {
                     if (res.data.content) {
                         setNotes(res.data.content);

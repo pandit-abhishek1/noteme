@@ -19,7 +19,7 @@ export default function AddForm() {
     const submitHandler = (event) => {
       event.preventDefault();
       axios
-        .post(`https://mern-notes-backend-5z2j.onrender.com/addNote`, note)
+        .post(`${import.meta.env.VITE_API_URL}/addNote`, note)
         .then(() => {
           navigate('/');
           Swal.fire({
