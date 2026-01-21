@@ -5,6 +5,7 @@ export default function Head() {
         textDecoration: 'none',
         color: '#f5400f'
     }
+    
   return (
     <nav>
         <div className="logo">
